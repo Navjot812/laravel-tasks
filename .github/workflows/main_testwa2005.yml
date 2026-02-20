@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - TestWA2005
+name: Build and deploy PHP app to Azure Web App - testwa2005
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4'
+          php-version: '8.2'
 
       - name: Check if composer.json exists
         id: check_files
@@ -56,15 +56,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_AE3E0CB2D44140A897C3B874AA08B331 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D0B5C28AB4C546A58E01866C7F28343B }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_90F4C2D972434D2DABFD0DC122D4A7D4 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_63D8F0AB6C0D45178B6D7FC53CEE58E8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CD4BF6584BAB4239A100D9BF4F0067F2 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6652F18290B54ACBAFDED5B87D520AB5 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'TestWA2005'
+          app-name: 'testwa2005'
           slot-name: 'Production'
           package: .
           
