@@ -38,7 +38,18 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: php-app
-          path: .
+          path: | 
+              app/ 
+              bootstrap/ 
+              config/ 
+              database/ 
+              public/ 
+              resources/ 
+              routes/ 
+              vendor/ 
+              artisan 
+              composer.json 
+              composer.lock
 
   deploy:
     runs-on: ubuntu-latest
@@ -67,4 +78,5 @@ jobs:
           app-name: 'navjot-lab-webapp-123'
           slot-name: 'Production'
           package: .
+
           
